@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="assets/image/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MovieBD :: HomePage</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container">
+          <a class="navbar-brand" href="./index.html"><img src="./assets/image/vite.svg" alt="Logomarca MovieDB" /> MovieDB</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-uppercase">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="./lancamentos.html"
+                  >Lançamentos</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./destaques.html">Em destaque</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Filme"
+              />
+              <button class="btn btn-outline-light" type="submit">
+                Pesquisar
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container">
+      <h1 class="my-3 text-center text-uppercase">Filmes em Destaque</h1>
+      <div class="row destaque"></div>
+    </div>
+
+    <footer class="py-3">
+      <div class="container">
+        <div class="row d-flex align-items-center">
+          <small class="col-md-9">&copy; Copyright 2022, Padrões Web - <b>ICEI PUC Minas</b></small>
+          <div class="col-md-3 text-end fw-bold">
+            <a class="navbar-brand" href="#">
+            <img src="./assets/image/vite.svg" alt="Logomarca MovieDB" /> MovieDB </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="assets/js/destaque.js"></script>
+    <script src="https://unpkg.com/phosphor-icons"></script>
+  </body>
+</html>
