@@ -12,13 +12,16 @@
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
     <header>
       <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
         <div class="container">
-          <a class="navbar-brand" href="./index.html"><img src="./assets/image/vite.svg" alt="Logomarca MovieDB" /> MovieDB</a>
+          <a class="navbar-brand" href="./index.html"
+            ><img src="./assets/image/vite.svg" alt="Logomarca MovieDB" />
+            MovieDB</a
+          >
           <button
             class="navbar-toggler"
             type="button"
@@ -33,7 +36,10 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-uppercase">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="./lancamentos.html"
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="./lancamentos.html"
                   >Lançamentos</a
                 >
               </li>
@@ -43,11 +49,11 @@
             </ul>
             <form class="d-flex" role="search">
               <input
-                class="form-control me-2"
+                class="form-control me-2 search"
                 type="search"
                 placeholder="Filme"
               />
-              <button class="btn btn-outline-light" type="submit">
+              <button class="btn btn-outline-light btnSearch" type="submit">
                 Pesquisar
               </button>
             </form>
@@ -56,18 +62,29 @@
       </nav>
     </header>
 
-    <div class="container">
+    <div class="container main">
       <h1 class="my-3 text-center text-uppercase">Filmes em Lançamento</h1>
       <div class="row lancamento"></div>
+    </div>
+
+    <div class="searchResults d-none">
+      <div class="container">
+        <h2 class="text-center my-4 text-uppercase">Resultado da Pesquisa</h2>
+        <div class="row movieSearchResults"></div>
+      </div>
     </div>
 
     <footer class="py-3">
       <div class="container">
         <div class="row d-flex align-items-center">
-          <small class="col-md-9">&copy; Copyright 2022, Padrões Web - <b>ICEI PUC Minas</b></small>
+          <small class="col-md-9"
+            >&copy; Copyright 2022, Padrões Web - <b>ICEI PUC Minas</b></small
+          >
           <div class="col-md-3 text-end fw-bold">
             <a class="navbar-brand" href="#">
-            <img src="./assets/image/vite.svg" alt="Logomarca MovieDB" /> MovieDB </a>
+              <img src="./assets/image/vite.svg" alt="Logomarca MovieDB" />
+              MovieDB
+            </a>
           </div>
         </div>
       </div>
