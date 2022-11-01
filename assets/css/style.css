@@ -7,3 +7,10 @@
   color: yellow;
   text-decoration: none;
 }
+
+.movies h4 {
+  font-weight: 200;
+  text-align: justify;
+  line-height: 45px;
+  font-size: 20px;
+}

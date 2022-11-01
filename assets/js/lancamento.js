@@ -7,7 +7,7 @@ const init = () => {
 init();
 
 function loadUpcomingMovies() {
-  fetch(`${WEBAPI_URL}/movie/upcoming?api_key=${WEBAPI_KEY}&language=pt`)
+  fetch(`${WEBAPI_URL}/movie/upcoming?api_key=${WEBAPI_KEY}`)
     .then((response) => response.json())
     .then((json) => {
       json.results.forEach((movie) => {
