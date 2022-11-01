@@ -1,25 +1,42 @@
 const WEBAPI_KEY = '3a6dacbb2c787551536f07cfc546eba1';
 const WEBAPI_URL = `https://api.themoviedb.org/3`;
+const urlParams = new URLSearchParams(window.location.search);
+const MY_PARAM = urlParams.get("movieId");
+console.log(MY_PARAM);
 
 const init = () => {
-  loadUpcomingMovies();
+  loadMovie();
   search();
 }
 init();
 
-function loadUpcomingMovies() {
-  fetch(`${WEBAPI_URL}/movie/upcoming?api_key=${WEBAPI_KEY}`)
+function loadMovie() {
+  fetch(`${WEBAPI_URL}/movie/${MY_PARAM}?api_key=${WEBAPI_KEY}`)
     .then((response) => response.json())
-    .then((json) => {
-      json.results.forEach((movie) => {
-        document.querySelector('.lancamento').innerHTML += `
-          <div class="col-md-3 col-4">
-            <div class="card mb-3">
-              <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="..." class="img-fluid" />
-            </div>
+    .then((movie) => {
+      const detalhesMovie = document.querySelector('.detalhes');
+      detalhesMovie.innerHTML = `
+        <div class="row p-5">
+          <div class="col-md-6 text-center">
+            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="..." class="img-fluid" />
           </div>
-        `;
-      });
+          <div class="col-md-6">
+            <h1 class="title-movie mb-4 pt-5"><a href="https://www.themoviedb.org/movie/${movie.id}" target="_blank">${movie.title}</a></h1>
+            <h4 class="mb-3">
+              ${movie.overview}
+            </h4>
+            <div class="mb-3">
+              <div class="row">
+                <div class="col-md-12"><b>Data Lançamento:</b> ${movie.release_date}</div>
+              </div>
+            </div>
+            <h2 class="avaliacao-movie">
+              Avaliação: ${movie.vote_average}
+            </h2>
+          </div>
+        </div>
+      `
+
     });
 }
 
@@ -46,11 +63,6 @@ function search() {
           <div class="col-md-3 col-4">
             <div class="card mb-3">
               <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="..." class="img-fluid" />
-              <div class="p-2">
-                <h5>${movie.title}</h5>
-                <p>${movie.overview}</p>
-                <a href="detalhes.html?movieId=${movie.id}" class="btn btn-sm btn-dark w-100">Detalhes</a>
-              </div>
             </div>
           </div>
         `;

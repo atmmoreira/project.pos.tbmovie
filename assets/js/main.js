@@ -74,7 +74,7 @@ function search() {
   searchBtn.addEventListener('click', (e) => {
     e.preventDefault();
     document.querySelector('.movieSearchResults').innerHTML = '';
-    
+
     const valueInputSearch = search.value;
     document.querySelector('.main').classList.add('d-none');
     document.querySelector('.searchResults').classList.remove('d-none');
@@ -90,6 +90,11 @@ function search() {
           <div class="col-md-3 col-4">
             <div class="card mb-3">
               <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="..." class="img-fluid" />
+              <div class="p-2">
+                <h5>${movie.title}</h5>
+                <p>${movie.overview}</p>
+                <a href="detalhes.html?movieId=${movie.id}" class="btn btn-sm btn-dark w-100">Detalhes</a>
+              </div>
             </div>
           </div>
         `;

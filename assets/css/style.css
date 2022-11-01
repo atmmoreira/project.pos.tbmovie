@@ -14,3 +14,15 @@
   line-height: 45px;
   font-size: 20px;
 }
+
+.detalhes .title-movie a {
+  color: #000;
+  text-decoration: none;
+}
+
+.detalhes h4 {
+  font-weight: 400;
+  text-align: justify;
+  line-height: 45px;
+  font-size: 20px;
+}
