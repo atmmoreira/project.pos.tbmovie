@@ -4,7 +4,6 @@ const WEBAPI_URL = `https://api.themoviedb.org/3`;
 const init = () => {
   loadUpcomingMovies();
   generateGenresList();
-  handleGenreMovies();
   search();
 };
 init();
@@ -41,31 +40,7 @@ function loadUpcomingMovies() {
     });
 }
 
-function generateGenresList() {
-  fetch(`${WEBAPI_URL}/genre/movie/list?api_key=${WEBAPI_KEY}&language=pt`)
-    .then((response) => response.json())
-    .then((json) => {
-      const categoryMovies = document.querySelector('.category');
 
-      for (const key in json) {
-        const listGenres = Array.from(json[key]);
-        listGenres.forEach((el) => {
-          categoryMovies.innerHTML += `<option value="${el.id}"> ${el.name} </option>`;
-        });
-      }
-    });
-}
-
-function handleGenreMovies() {
-  const categoryMovies = document.querySelector('.category');
-  const loadMovies = document.querySelector('.movies');
-
-  categoryMovies.addEventListener('change', () => {
-    console.log(categoryMovies.value.text);
-  });
-}
-
-function filterMoviesByCategory(category) {}
 
 function search() {
   const search = document.querySelector('.search');

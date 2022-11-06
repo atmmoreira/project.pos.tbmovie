@@ -13,6 +13,11 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/plugin/assets/owl.carousel.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/plugin/assets/owl.theme.default.css"
+    />
   </head>
   <body>
     <header>
@@ -71,22 +76,6 @@
           <div class="movies"></div>
         </div>
       </section>
-
-      <section class="highlights pb-5 pt-3">
-        <div class="container mb-3">
-          <div class="row mb-4">
-            <div class="col-md-9">
-              <h2 class="my-4 text-uppercase">Em destaque</h2>
-            </div>
-            <div class="col-md-3 mt-4">
-              <select class="form-select category">
-                <option selected>Selecione a categoria</option>
-              </select>
-            </div>
-          </div>
-          <div class="row text-center movies"></div>
-        </div>
-      </section>
     </div>
 
     <div class="searchResults d-none">
@@ -118,5 +107,29 @@
     ></script>
     <script type="module" src="assets/js/main.js"></script>
     <script src="https://unpkg.com/phosphor-icons"></script>
+    <script src="assets/plugin/jquery.js"></script>
+    <script src="assets/plugin/owl.carousel.js"></script>
+    <script>
+      $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        responsiveClass: true,
+        responsive: {
+          0: {
+            items: 1,
+            nav: true,
+          },
+          600: {
+            items: 3,
+            nav: false,
+          },
+          1000: {
+            items: 4,
+            nav: true,
+            loop: false,
+          },
+        },
+      });
+    </script>
   </body>
 </html>
